@@ -34,7 +34,7 @@
 				"noExplicitAny": "warn"
 			},
 			"nursery": {
-				"useSortedClasses": "error"
+				"useSortedClasses": "info"
 			}
 		}
 	},
