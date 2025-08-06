@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: bewear
+      POSTGRES_PASSWORD: B3wE4r
+      POSTGRES_DB: bewear
+    ports:
+      - 5435:5432
+    
