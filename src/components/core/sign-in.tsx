@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form"
 
 const formSchema = z.object({
-	email: z.email("E-mail inválid!"),
+	email: z.email("E-mail inválido!"),
 	password: z.string("Senha inválida!").min(8, "Senha inválida!"),
 })
 
