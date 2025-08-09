@@ -120,3 +120,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+/*
+FONTS
+*/
+
+.font-urbanist {
+  font-family: var(--font-urbanist), sans-serif;
+}
+
+.font-roboto-serif {
+  font-family: var(--font-roboto-serif), serif;
+}

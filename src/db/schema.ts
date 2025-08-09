@@ -1,11 +1,10 @@
 import { relations } from "drizzle-orm"
 import { boolean, integer, pgEnum, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core"
 
-export const userTable = pgTable("users", {
+export const usersTable = pgTable("user", {
 	id: text("id").primaryKey(),
 	name: text("name").notNull(),
 	email: text("email").notNull().unique(),
-	password: text("password").notNull(),
 	emailVerified: boolean("email_verified")
 		.$defaultFn(() => false)
 		.notNull(),
@@ -28,7 +27,7 @@ export const sessionTable = pgTable("sessions", {
 	userAgent: text("user_agent"),
 	userId: text("user_id")
 		.notNull()
-		.references(() => userTable.id, { onDelete: "cascade" }),
+		.references(() => usersTable.id, { onDelete: "cascade" }),
 })
 
 export const accountTable = pgTable("accounts", {
@@ -37,7 +36,7 @@ export const accountTable = pgTable("accounts", {
 	providerId: text("provider_id").notNull(),
 	userId: text("user_id")
 		.notNull()
-		.references(() => userTable.id, { onDelete: "cascade" }),
+		.references(() => usersTable.id, { onDelete: "cascade" }),
 	accessToken: text("access_token"),
 	refreshToken: text("refresh_token"),
 	idToken: text("id_token"),
